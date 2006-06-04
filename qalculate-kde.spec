@@ -1,15 +1,19 @@
+# TODO:
+#	- fix desktop file location
+#	- use find_lang, check BRs
 Summary:	A multi-purpose desktop calculator for GNU/Linux
 Name:		qalculate-kde
 Version:	0.9.4
 Release:	0.1
 License:	GPL
 Group:		Applications/Engineering
-URL:		http://qalculate.sourceforge.net/
 Source0:	http://dl.sourceforge.net/qalculate/%{name}-%{version}.tar.gz
 # Source0-md5:	ec11bf96f181d6eb3ad1ddc430388701
+URL:		http://qalculate.sourceforge.net/
 BuildRequires:	gettext
 BuildRequires:	kdelibs-devel
 BuildRequires:	libqalculate-devel
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	gnuplot
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
