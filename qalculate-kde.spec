@@ -10,12 +10,14 @@ Source0:	http://dl.sourceforge.net/qalculate/%{name}-%{version}.tar.gz
 URL:		http://qalculate.sourceforge.net/
 BuildRequires:	cln-devel >= 1.1.0
 BuildRequires:	gettext
-BuildRequires:	glib2-devel
+BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	kdelibs-devel
-BuildRequires:	libqalculate-devel
-BuildRequires:	libxml2-devel
+BuildRequires:	libqalculate-devel >= 0.9.4
+BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	gnuplot
+Requires:	libqalculate >= 0.9.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,17 +47,16 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Utilities,%{_desktopdir}}/qalculate_kde.desktop
 
-%find_lang qalculate_kde
+%find_lang qalculate_kde --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f qalculate_kde.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog COPYING
+%doc AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/qalculate-kde
 %{_iconsdir}/hicolor/*/apps/*
 %{_iconsdir}/hicolor/32x32/actions/qalculate_convert.png
 %{_desktopdir}/*
 %{_datadir}/apps/qalculate_kde/qalculate_kdeui.rc
-%{_docdir}/kde/HTML/en/qalculate_kde/*
