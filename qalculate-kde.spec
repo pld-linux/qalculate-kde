@@ -58,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/qalculate-kde
 %{_iconsdir}/hicolor/*/apps/*
 %{_iconsdir}/hicolor/32x32/actions/qalculate_convert.png
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_datadir}/apps/qalculate_kde/qalculate_kdeui.rc
