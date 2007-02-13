@@ -1,5 +1,5 @@
 Summary:	A multi-purpose desktop calculator for GNU/Linux
-Summary(pl.UTF-8):   Wielozadaniowy kalkulator dla systemu GNU/Linux
+Summary(pl.UTF-8):	Wielozadaniowy kalkulator dla systemu GNU/Linux
 Name:		qalculate-kde
 Version:	0.9.4
 Release:	0.1
