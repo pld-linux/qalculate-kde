@@ -1,12 +1,12 @@
 Summary:	A multi-purpose desktop calculator for GNU/Linux
 Summary(pl.UTF-8):	Wielozadaniowy kalkulator dla systemu GNU/Linux
 Name:		qalculate-kde
-Version:	0.9.4
-Release:	0.1
+Version:	0.9.5
+Release:	1
 License:	GPL
 Group:		Applications/Engineering
 Source0:	http://dl.sourceforge.net/qalculate/%{name}-%{version}.tar.gz
-# Source0-md5:	ec11bf96f181d6eb3ad1ddc430388701
+# Source0-md5:	46eb26a6e33fbc65581c2020cf187f4e
 URL:		http://qalculate.sourceforge.net/
 BuildRequires:	cln-devel >= 1.1.0
 BuildRequires:	gettext
@@ -45,8 +45,6 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
         kde_htmldir=%{_kdedocdir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Utilities,%{_desktopdir}}/qalculate_kde.desktop
-
 %find_lang qalculate_kde --with-kde
 
 %clean
@@ -58,5 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/qalculate-kde
 %{_iconsdir}/hicolor/*/apps/*
 %{_iconsdir}/hicolor/32x32/actions/qalculate_convert.png
-%{_desktopdir}/*.desktop
+%{_desktopdir}/kde/*.desktop
+%dir %{_datadir}/apps/qalculate_kde
 %{_datadir}/apps/qalculate_kde/qalculate_kdeui.rc
